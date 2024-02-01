@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                     docker run --user $(id -u) -v "/c/Program Files (x86)/Jenkins/workspace/dastardly_test:/c/Program Files (x86)/Jenkins/workspace/dastardly_test":rw \
                     -e BURP_START_URL=https://ginandjuice.shop/ \
-                    -e BURP_REPORT_FILE_PATH=/${WORKSPACE}/dastardly-report.xml \
+                    -e BURP_REPORT_FILE_PATH="/c/Program Files (x86)/Jenkins/workspace/dastardly_test/dastardly-report.xml" \
                     public.ecr.aws/portswigger/dastardly:latest
                 '''
             }
